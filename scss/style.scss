@@ -259,6 +259,9 @@ $color_wight: #ffffff;
   margin: 0 auto;
   text-align: center;
   padding-top: 90px;
+  transform: translate(0px, 30%);
+  opacity: 0;
+  transition: all 1s ease;
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -333,6 +336,9 @@ $color_wight: #ffffff;
   margin: 0 auto;
   text-align: center;
   width: 100%;
+  transform: translate(-90%, 0px);
+  opacity: 0;
+  transition: all 1s ease;
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -468,6 +474,9 @@ $color_wight: #ffffff;
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
+  transform: translate(-90%, 0px);
+  opacity: 0;
+  transition: all 1s ease;
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -540,6 +549,9 @@ $color_wight: #ffffff;
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
+  transform: translate(-90%, 0px);
+  opacity: 0;
+  transition: all 1s ease;
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -619,6 +631,9 @@ $color_wight: #ffffff;
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
+  transform: translate(0px, 30%);
+  opacity: 0;
+  transition: all 1s ease;
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -725,6 +740,9 @@ $color_wight: #ffffff;
   margin: 0 auto;
   text-align: center;
   background-color: #f0f0f0;
+  transform: translate(-90%, 0px);
+  opacity: 0;
+  transition: all 1s ease;
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -879,6 +897,31 @@ $color_wight: #ffffff;
 }
 
 
+/*-------addEvenListener-----*/
+.second._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.third._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.fourth._active {
+  transform: translate(0px, 0px); 
+  opacity: 1;
+}
+.fifth._active {
+  transform: translate(0px, 0px); 
+  opacity: 1;
+}
+.sixth._active {
+  transform: translate(0px, 0px); 
+  opacity: 1;
+}
+.seventh._active {
+  transform: translate(0px, 0px); 
+  opacity: 1;
+}
 
 
 
