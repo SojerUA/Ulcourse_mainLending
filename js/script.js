@@ -1,5 +1,5 @@
 
-
+// add animation for sections when scrolling
 const animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
@@ -9,7 +9,7 @@ if (animItems.length > 0) {
       const animItem = animItems[index];
       const animItemHeight = animItem.offsetHeight;
       const animItemOffset = offset(animItem).top;
-      const animStart = 4;
+      const animStart = 7;
       let animItemPoint = window.innerHeight - animItemHeight / animStart;
       if(animItemHeight > window.innerHeight) {
         animItemPoint = window.innerHeight - window.innerHeight / animStart;
@@ -31,8 +31,18 @@ if (animItems.length > 0) {
   }
 }
 
+// add heder fixed when scroll
 
+const header = document.getElementById('fixed');
 
+window.addEventListener('scroll', stickyOnScroll);
+function stickyOnScroll() {
+  if (window.scrollY > 0) {
+    header.classList.add('_fixed');
+  } else {
+      header.classList.remove('_fixed');
+  }
+}
 
 
 

@@ -110,11 +110,16 @@ $color_wight: #ffffff;
   background: $color_orange;
   color: $color_wight;
 }
-
+.all {
+  width: 100%;
+  overflow: hidden;
+}
 .header {
   background-color: #fff;
   color: #000000;
   position: relative;
+  transition: all .2s ease;
+  z-index: 30;
   &__title {
     padding: 25px 0px 25px 0px;
     margin: 0px 44px;
@@ -146,11 +151,11 @@ $color_wight: #ffffff;
     margin-left: 20px;
   }
   &__menu-burger {
-    opacity: 0;
-    visibility: hidden;
     position: absolute;
-    top: 33px;
-    right: 120px;
+    top: 15px;
+    right: 60px;
+    padding: 20px 55px 10px 10px;
+    display: none;
   }
   &__burger {
     color: #000000;
@@ -160,13 +165,11 @@ $color_wight: #ffffff;
     }
   }
   &__menu-visible {
-    width: 80%;
     display: flex;
     justify-content: flex-end;
     &:hover {
       .header__menu-burger {
-        opacity: 1;
-        visibility: visible;
+        display: block;
       }
     }
   }
@@ -177,6 +180,7 @@ $color_wight: #ffffff;
   background: url(../img/header-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
   &__content {
     display: flex;
     flex-direction: column;
@@ -336,9 +340,12 @@ $color_wight: #ffffff;
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  transform: translate(-90%, 0px);
-  opacity: 0;
-  transition: all 1s ease;
+  &__background {
+    background-color: #f0f0f0;
+    transform: translate(-90%, 0px);
+    opacity: 0;
+    transition: all 1s ease;
+    }
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -474,7 +481,7 @@ $color_wight: #ffffff;
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
-  transform: translate(-90%, 0px);
+  transform: translate(90%, 0px);
   opacity: 0;
   transition: all 1s ease;
   &__container {
@@ -549,7 +556,7 @@ $color_wight: #ffffff;
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
-  transform: translate(-90%, 0px);
+  transform: translate(90%, 0px);
   opacity: 0;
   transition: all 1s ease;
   &__container {
@@ -740,9 +747,11 @@ $color_wight: #ffffff;
   margin: 0 auto;
   text-align: center;
   background-color: #f0f0f0;
-  transform: translate(-90%, 0px);
-  opacity: 0;
-  transition: all 1s ease;
+  &__background {
+    transform: translate(90%, 0px);
+    opacity: 0;
+    transition: all 1s ease;
+  }
   &__container {
     font-family: 'Poppins SemiBold';
     font-size: 30px;
@@ -898,11 +907,20 @@ $color_wight: #ffffff;
 
 
 /*-------addEvenListener-----*/
+._fixed {
+  position: fixed;
+  opacity: 0.9;
+  top: 0;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .second._active {
   transform: translate(0px, 0px);
   opacity: 1;
 }
-.third._active {
+.third__background._active {
   transform: translate(0px, 0px);
   opacity: 1;
 }
@@ -918,12 +936,25 @@ $color_wight: #ffffff;
   transform: translate(0px, 0px); 
   opacity: 1;
 }
-.seventh._active {
+.seventh__background._active {
   transform: translate(0px, 0px); 
   opacity: 1;
 }
 
-
+/*---------------------*/
+@media (min-width: 1200px) {
+  .fifth__content {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .fifth__content-item {
+    max-width: 50%;
+  }
+  .fifth__picture > img {
+    width: 510px;
+  }
+}
 
 
 
