@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="./scss/style.css">
   <link rel="shortcut icon" href="./img/shortcut.ico" type="image/x-icon">
   <script defer src="./js/script.js"></script>
+  <script defer src="./js/app.js"></script>
+  <script defer src="./js/slider.js"></script>
   <title>Pixova Lite</title>
 </head>
 <body>
@@ -20,7 +22,7 @@
         <ul class="header__menu-list">
           <li class="header__menu-custom"> <a href="#" id="about" class="header__title-inner">about</a> </li>
           <li class="header__menu-custom"> <a href="#" class="header__title-inner">recent works</a> </li>
-          <li class="header__menu-custom"> <a href="#" class="header__title-inner">testimonials</a> </li>
+          <li class="header__menu-custom"> <a href="#content-slider" class="header__title-inner">testimonials</a> </li>
           <li class="header__menu-custom"> <a href="#" class="header__title-inner">team</a> </li>
           <li class="header__menu-custom"> <a href="#" class="header__title-inner">news</a> </li>
           <li class="header__menu-custom"> <a href="#" id="contact" class="header__title-inner">contact</a> </li>
@@ -48,7 +50,8 @@
       </div>
     </div>
   </section>
-  <section class="second _anim-items _anim-no-hide">
+  <div class="wrapper">
+  <section class="second _anim-graphic _anim-items _anim-no-hide">
     <div class="second__container">
       <div class="second__intro">
         <h2 class="second__title">We build solutions for your everyday problems.</h2>
@@ -61,20 +64,32 @@
         <p>Working with Pixova has been an experience for a lifetime. I strongly reccommend these guys for their awesome support. Erlich Bachman, Aviato</p>
       </div>
       <div class="second__wrapper">
-        <div class="second__elements">
-          <span class="second__elements-size">71%</span>
+        <div class="second__wrapper-colum">
+          <div class="second__canvas-graph">
+            <div class="second__elements-size">71</div>
+            <canvas class="canvas" width="250px" height="250px"></canvas>
+          </div>
           <h4>WEB DESIGN</h4>
         </div>
-        <div class="second__elements">
-          <span class="second__elements-size">89%</span>
+        <div class="second__wrapper-colum">
+          <div class="second__canvas-graph">
+            <div class="second__elements-size">89</div>
+            <canvas class="canvas" width="250px" height="250px"></canvas>
+          </div>
           <h4>WEB DEVELOPMENT</h4>
         </div>
-        <div class="second__elements">
-          <span class="second__elements-size">88%</span>
+        <div class="second__wrapper-colum">
+          <div class="second__canvas-graph">
+            <div class="second__elements-size">88</div>
+            <canvas class="canvas" width="250px" height="250px"></canvas>
+          </div>
           <h4>PRINT DESIGN</h4>
         </div>
-        <div class="second__elements">
-          <span class="second__elements-size">62%</span>
+        <div class="second__wrapper-colum">
+          <div class="second__canvas-graph">
+            <div class="second__elements-size">62</div>
+            <canvas class="canvas" width="250px" height="250px"></canvas>
+          </div>
           <h4>GRAPHIC IDENTITD</h4>
         </div>
       </div>
@@ -135,21 +150,45 @@
         <span class="fourth__label">We don't like to brag, others do it for us.</span>
       </div>
     </div>
-    <div class="fourth__items-slider">
-      <div class="fourth__content">
-      <div class="fourth__content-foto">
-        <img src="./img/teammembru_burned-92x92.jpg" alt="pic">
-      </div>
-        <div class="fourth__content-inner">
-          <p class="fourth__content-text">Working with Pixova has been an experience for a lifetime. I strongly reccommend these guys for their awesome support. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat eleifend convallis.</p>
-          <div class="fourth__content-name">
-            <span class="fourth__content-guy">Katie Parry - Hooli</span>
+    <div class="fourth__wrapper-slider">
+      <div class="fourth__items-slider">
+          <div id="content-slider" class="fourth__content-slider slide slider-active">
+            <div class="fourth__content-foto">
+              <img src="./img/teammembru_burned-92x92.jpg" alt="pic">
+            </div>
+            <div class="fourth__content-inner">
+              <p class="fourth__content-text">Working with Pixova has been an experience for a lifetime. I strongly reccommend these guys for their awesome support.</p>
+              <div class="fourth__content-name">
+                <span class="fourth__content-guy">Katie Parry - Hooli -</span>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="fourth__content-slider slide">
+            <div id="content-slider" class="fourth__content-foto">
+              <img src="./img/teammembru2-150x150.jpg" alt="pic">
+            </div>
+            <div class="fourth__content-inner">
+              <p class="fourth__content-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <div class="fourth__content-name">
+                <span class="fourth__content-guy">John Doe -</span>
+              </div>
+            </div>
+          </div>
+          <div id="content-slider" class="fourth__content-slider slide">
+            <div class="fourth__content-foto">
+              <img src="./img/teammembru3-150x150.jpg" alt="pic">
+            </div>
+            <div class="fourth__content-inner">
+              <p class="fourth__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quia, inventore incidunt commodi optio eveniet.</p>
+              <div class="fourth__content-name">
+                <span class="fourth__content-guy">Angelelo -</span>
+              </div>
+            </div>
+          </div>
+          <div class="fourth__slider-button">
+            <span id="show-prev-btn" class="fourth__slider-prev"><i class="fas fa-chevron-left fa-2x"></i></span> <span id="show-next-btn" class="fourth__slider-push"><i class="fas fa-chevron-right fa-2x"></i></span>
+          </div>
       </div>
-    </div>
-    <div class="fourth__slider-button">
-      <span class="fourth__slider-push"><i class="far fa-caret-square-right fa-3x"></i></span>
     </div>
   </section>
   <section class="fifth _anim-items _anim-no-hide">
@@ -159,8 +198,9 @@
         <span class="fifth__label">Straight from our blog</span>
       </div>
     </div>
-    <div class="fifth__content">
-      <div class="fifth__content-item">
+    <div class="fifth__content slideshow">
+      <div class="fifth__content-inner line">
+      <div class="fifth__content-item card">
         <a href="#" class="fifth__picture">
           <img src="./img/scott-webb-51542-250x250.jpg" alt="pic">
         </a>
@@ -174,7 +214,7 @@
           <p class="fifth__text-low">Aliquam mauris justo, sagittis vitae lacus non, vestibulum sollicitudin nisl.</p>
         </div>
       </div>
-      <div class="fifth__content-item">
+      <div class="fifth__content-item card">
         <a href="#" class="fifth__picture">
           <img src="./img/matt-barrett-339981-250x250.jpg" alt="pic">
         </a>
@@ -188,7 +228,7 @@
           <p class="fifth__text-low">Suspendisse varius nulla vel mi fringilla, a pharetra lectus tempus.</p>
         </div>
       </div>
-      <div class="fifth__content-item">
+      <div class="fifth__content-item card">
         <a href="#" class="fifth__picture">
           <img src="./img/customize-250x250.jpg" alt="pic">
         </a>
@@ -202,7 +242,7 @@
           <p class="fifth__text-low">Our latest free WordPress themes has launched on w.org.</p>
         </div>
       </div>
-      <div class="fifth__content-item">
+      <div class="fifth__content-item card">
         <a href="#" class="fifth__picture">
           <img src="./img/rand-4.jpg" alt="pic">
         </a>
@@ -215,6 +255,10 @@
           </h2>
           <p class="fifth__text-low">Welcome to colorlib.com. This is your first post. Edit or delete it, then start blogging!</p>
         </div>
+      </div>
+      </div>
+      <div class="fifth__slider-button">
+        <span id="show-all-btn" class="fifth__slider-all-btn"><i class="fas fa-chevron-left fa-2x"></i></span>
       </div>
     </div>
   </section>
@@ -356,9 +400,23 @@
           <span>Email: contact@site.com</span>
         </div>
       </div>
+      <div class="seventh__content-form">
+          <form class="seventh__contact-form" action="#" method="post" enctype="multipart/form-data">
+            <label for="name">Your Name (required)</label>
+            <input type="text" name="name" id="name" required>
+            <label for="email">Your Email (required)</label>
+            <input type="email" name="email" id="email" required>
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject">
+            <label for="message">Your Message</label>
+            <textarea name="message" id="message" rows="15" cols="30"></textarea>
+            <button class="seventh__contact-btn" type="submit">Send</button>
+        </form>
+      </div>
     </div>
   </div>
   </section>
+  </div>
 </article>
   <footer class="footer">
     <div class="footer__content">
@@ -397,7 +455,7 @@
     </div>
     <div class="footer__container">
       <div class="footer__container-inner">
-        <p>Theme: <a href="#" class="footer__color-inner">Pixova Lite</a>  · Made with <span class="footer__color-heart"><i class="fas fa-heart"></i></span> by <a href="#" class="footer__color-inner">Colorlib</a>  · © Copyright 2021. All Rights Reserved</p>
+        <p>Theme: <a href="#" class="footer__color-inner">Pixova Lite</a>  · Made with <span class="footer__color-heart"><i class="fas fa-heart"></i></span> by <a href="#" class="footer__color-inner">Oleguk</a>  · © Copyright 2021. All Rights Reserved</p>
       </div>
     </div>
   </footer>
