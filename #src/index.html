@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./scss/style.css">
+  <link rel="stylesheet" href="./css/style.min.css">
   <link rel="shortcut icon" href="./img/shortcut.ico" type="image/x-icon">
-  <script defer src="./js/script.js"></script>
+  <script defer src="./js/script.min.js"></script>
   <script defer src="./js/app.js"></script>
   <script defer src="./js/slider.js"></script>
   <title>Pixova Lite</title>
 </head>
 <body>
+  <div class="preloader" id="preloader">
+    <div class="preloader__pixova" id="pixova"><span class="preloader__pixova-lite">Pixova Lite</span></div>
+    <div class="preloader__wrap" id="wrap"> <img src="./img/Loader.gif" alt="preloader"> </div>
+  </div>
   <header class="header" id="fixed">
     <div class="header__content">
       <div class="header__title">
@@ -20,12 +24,12 @@
       <div class="header__menu-visible">
       <nav class="header__menu-burger">
         <ul class="header__menu-list">
-          <li class="header__menu-custom"> <a href="#" id="about" class="header__title-inner">about</a> </li>
-          <li class="header__menu-custom"> <a href="#" class="header__title-inner">recent works</a> </li>
-          <li class="header__menu-custom"> <a href="#content-slider" class="header__title-inner">testimonials</a> </li>
-          <li class="header__menu-custom"> <a href="#" class="header__title-inner">team</a> </li>
-          <li class="header__menu-custom"> <a href="#" class="header__title-inner">news</a> </li>
-          <li class="header__menu-custom"> <a href="#" id="contact" class="header__title-inner">contact</a> </li>
+          <li class="header__menu-custom"> <a href="#about" class="header__title-inner">about</a> </li>
+          <li class="header__menu-custom"> <a href="#recent" class="header__title-inner">recent works</a> </li>
+          <li class="header__menu-custom"> <a href="#testimonials" class="header__title-inner">testimonials</a> </li>
+          <li class="header__menu-custom"> <a href="#team" class="header__title-inner">team</a> </li>
+          <li class="header__menu-custom"> <a href="#news" class="header__title-inner">news</a> </li>
+          <li class="header__menu-custom"> <a href="#contact" class="header__title-inner">contact</a> </li>
         </ul>
       </nav>
       <a href="#" class="header__burger"> <i class="fas fa-bars fa-lg white"> </i></a>
@@ -45,8 +49,8 @@
         <h3 class="section__text-margin">Your cool business headline here. You can even <span class="section__text-decoration"> insert HTML here & images.</span> Lorem ipsum dolor sit amet lorem dolor sit amet.</h3>
       </div>
       <div class="section__btn">
-        <a href="#about" class="section__btn-info"> <span>learn more</span> </a>
-        <a href="#contact" class="section__btn-contact"> <span>contact us</span> </a>
+        <a href="#more" class="section__btn-info"> <span>learn more</span> </a>
+        <a href="#form" class="section__btn-contact"> <span>contact us</span> </a>
       </div>
     </div>
   </section>
@@ -95,7 +99,7 @@
       </div>
     </div>
   </section>
-  <section class="third ">
+  <section class="third" id="recent">
     <div class="third__background _anim-items _anim-no-hide">
     <div class="third__container">
       <div class="third__intro">
@@ -143,7 +147,7 @@
     </div>
   </div>
   </section>
-  <section class="fourth _anim-items _anim-no-hide">
+  <section class="fourth _anim-items _anim-no-hide" id="testimonials">
     <div class="fourth__container">
       <div class="fourth__intro">
         <h2 class="fourth__title">Some words from our clients</h2>
@@ -185,13 +189,13 @@
               </div>
             </div>
           </div>
-          <div class="fourth__slider-button">
-            <span id="show-prev-btn" class="fourth__slider-prev"><i class="fas fa-chevron-left fa-2x"></i></span> <span id="show-next-btn" class="fourth__slider-push"><i class="fas fa-chevron-right fa-2x"></i></span>
-          </div>
+      </div>
+      <div class="fourth__slider-button">
+        <span id="show-prev-btn" class="fourth__slider-prev"><i class="fas fa-chevron-left fa-2x"></i></span> <span id="show-next-btn" class="fourth__slider-push"><i class="fas fa-chevron-right fa-2x"></i></span>
       </div>
     </div>
   </section>
-  <section class="fifth _anim-items _anim-no-hide">
+  <section class="fifth _anim-items _anim-no-hide" id="news">
     <div class="fifth__container">
       <div class="fifth__intro">
         <h2 class="fifth__title">Latest news</h2>
@@ -257,12 +261,12 @@
         </div>
       </div>
       </div>
-      <div class="fifth__slider-button">
-        <span id="show-all-btn" class="fifth__slider-all-btn"><i class="fas fa-chevron-left fa-2x"></i></span>
-      </div>
+    </div>
+    <div class="fifth__slider-button">
+      <span id="prev-btn" class="fifth__slider-prev-btn"><i class="fas fa-chevron-left fa-2x"></i></span>  <span id="next-btn" class="fifth__slider-next-btn"><i class="fas fa-chevron-right fa-2x"></i></span>
     </div>
   </section>
-  <section class="sixth _anim-items _anim-no-hide">
+  <section class="sixth _anim-items _anim-no-hide" id="team">
     <div class="sixth__container">
       <div class="sixth__intro">
         <h2 class="sixth__title">The team</h2>
@@ -378,7 +382,7 @@
       </div>
     </div>
   </section>
-  <section class="seventh">
+  <section class="seventh" id="contact">
     <div class="seventh__background _anim-items _anim-no-hide">
     <div class="seventh__container">
       <div class="seventh__intro">
@@ -401,14 +405,14 @@
         </div>
       </div>
       <div class="seventh__content-form">
-          <form class="seventh__contact-form" action="#" method="post" enctype="multipart/form-data">
-            <label for="name">Your Name (required)</label>
-            <input type="text" name="name" id="name" required>
-            <label for="email">Your Email (required)</label>
-            <input type="email" name="email" id="email" required>
-            <label for="subject">Subject</label>
-            <input type="text" name="subject" id="subject">
-            <label for="message">Your Message</label>
+          <form id="form" class="seventh__contact-form" action="#" method="post" enctype="multipart/form-data">
+            <label for="name" class="seventh__label">Your Name (required)</label>
+            <input type="text" name="name" id="name" class="seventh__input _req">
+            <label for="email" class="seventh__label">Your Email (required)</label>
+            <input type="email" name="email" id="email" class="seventh__input _email _req ">
+            <label for="subject" class="seventh__label">Subject</label>
+            <input type="text" name="subject" id="subject" class="seventh__input">
+            <label for="message" class="seventh__label">Your Message</label>
             <textarea name="message" id="message" rows="15" cols="30"></textarea>
             <button class="seventh__contact-btn" type="submit">Send</button>
         </form>
@@ -418,7 +422,7 @@
   </section>
   </div>
 </article>
-  <footer class="footer">
+  <footer class="footer" id="about">
     <div class="footer__content">
       <div class="footer__items">
         <h3 class="footer__title">About us</h3>
@@ -443,7 +447,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer__content-social">
+    <div class="footer__content-social" id="more">
       <ul class="footer__socials">
         <li><a href="#" class="footer__social"><i class="fab fa-facebook-square"></i></a></li>
         <li><a href="#" class="footer__social"><i class="fab fa-twitter"></i></a></li>

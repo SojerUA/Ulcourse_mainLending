@@ -59,9 +59,9 @@
 }
 
 //Reset file
-@import "nullstyle.scss";
+@import "./nullstyle.css";
 //FontIcons
-@import "fontawesome.css";
+@import "./fontawesome.css";
 @font-face {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
@@ -118,6 +118,58 @@ $color_wight: #ffffff;
   position: relative;
   z-index: 1000;
 }
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #c9c3c3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  transition: all .5s ease 0s;
+  &__pixova {
+    text-transform: uppercase;
+    margin: 0px 0px 150px 0px;
+    transform: translate(0px, 1000%);
+    transition: all .5s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__pixova.transparent {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  visibility: visible;
+  }
+  &__pixova-lite {
+    font-family: 'Roboto regular';
+    font-size: 24px;
+  }
+  &__wrap {
+    margin-top: 50px;
+    max-width: 15%;
+    transform: translate(0px, 200%);
+    transition: all .5s ease 1s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__wrap.transparent {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    visibility: visible;
+  }
+  &__wrap>img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.preloader.transparent {
+  transform: translate(0, -100%);
+}
 .header {
   background-color: #fff;
   color: #000000;
@@ -160,7 +212,7 @@ $color_wight: #ffffff;
     position: absolute;
     top: 15px;
     right: 60px;
-    padding: 20px 55px 10px 10px;
+    padding: 20px 55px 30px 10px;
     display: none;
   }
   &__burger {
@@ -489,7 +541,7 @@ $color_wight: #ffffff;
 .fourth {
   background-color: $color_wight;
   width: 100%;
-  padding: 30px 0px;
+  padding: 60px 0px;
   margin: 0 auto;
   text-align: center;
   transform: translate(90%, 0px);
@@ -527,18 +579,19 @@ $color_wight: #ffffff;
   &__wrapper-slider {
     width: 85%;
     margin: 0 auto;
+    position: relative;
   }
   &__items-slider {
     position: relative;
     display: flex;
     overflow: hidden;
+    margin-left: 35px;
   }
   &__content-slider {
     visibility: hidden;
     opacity: 1;
     min-width: 85%;
     justify-content: center;
-    //transition:all .3s ease;
   }
   &__content-foto>img {
     border: 5px solid #f8f8f8;
@@ -571,15 +624,15 @@ $color_wight: #ffffff;
   }
   &__slider-push {
     position: absolute;
-    right: 0;
-    top: 50%;
+    right: 47%;
+    top: 100%;
     cursor: pointer;
     margin-left: 10px;
   }
   &__slider-prev {
     position: absolute;
-    left: 0;
-    top: 50%;
+    left: 47%;
+    top: 100%;
     cursor: pointer;
     margin-left: 10px;
   }
@@ -590,6 +643,7 @@ $color_wight: #ffffff;
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
   transform: translate(90%, 0px);
   opacity: 0;
   transition: all 1s ease;
@@ -624,13 +678,14 @@ $color_wight: #ffffff;
   }
   &__content {
     max-width: 85%;
+    margin: 0 20px;
     position: relative;
     overflow: hidden;
   }
   &__content-inner {
     display: flex;
     position: relative;
-    max-width: 1060px;
+    max-width: 100%;
     transition: all .5s ease;
   }
   &__content-item {
@@ -674,10 +729,16 @@ $color_wight: #ffffff;
   &__slider-button {
     padding-top: 20px;
   }
-  &__slider-all-btn {
+  &__slider-prev-btn {
     position: absolute;
-    right: 0;
-    top: 35%;
+    left: 10%;
+    top: 50%;
+    cursor: pointer;
+  }
+  &__slider-next-btn {
+    position: absolute;
+    right: 10%;
+    top: 50%;
     cursor: pointer;
   }
 }
@@ -864,30 +925,60 @@ $color_wight: #ffffff;
     flex: 3;
     text-align: left;
   }
+  &__contact-form._sending {
+    &::after{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   &__contact-form {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 50px;
-    > label {
-      display: inline-block;
-      padding: 20px 0 5px;
-      font-size: 16px;
-      line-height: 1.8;
-      font-family: 'Roboto Regular';
-  }
-  > input {
+    >textarea {
       background-color: #f0f0f0;
+      padding: 10px;
       border: 1px solid rgba(119, 119, 119, 0.63);
-      padding: 10px 10px;
-      border-style: solid;
-  }
-  > textarea {
-      background-color: #f0f0f0;
-      border: 1px solid rgba(119, 119, 119, 0.63);
+      transition: all .3s ease 0s;
+      &:focus {
+        box-shadow: 0 0 15px #7a956b;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(51, 51, 51, 0.1) url('../img/Loader2.gif') center / 100px no-repeat;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s ease 0s;
     }
   }
-&__contact-btn {
+  &__label {
+    display: inline-block;
+    padding: 20px 0 5px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-family: 'Roboto Regular';
+  }
+  &__input {
+    background-color: #f0f0f0;
+    border: 1px solid rgba(119, 119, 119, 0.63);
+    padding: 10px 10px;
+    border-style: solid;
+    transition: all .3s ease 0s;
+    &:focus {
+      box-shadow: 0 0 15px #7a956b;
+    }
+  }
+  &__input._error {
+    box-shadow: 0 0 15px #ff0000;
+  }
+  &__contact-btn {
     width: 100px;
     padding: 10px 0;
     margin-top: 15px;
@@ -895,6 +986,11 @@ $color_wight: #ffffff;
     background-color: $color_orange;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    top: 0;
+    &:active {
+      top: 3px;
+    }
   }
 }
 .footer {
@@ -999,7 +1095,6 @@ $color_wight: #ffffff;
   margin-top: 0;
   padding-top: 0;
 }
-
 .second._active {
   transform: translate(0px, 0px);
   opacity: 1;
@@ -1032,16 +1127,21 @@ $color_wight: #ffffff;
   position: absolute;
   left: 0;
 }
+
 /*---------------------*/
 @media (min-width: 1200px) {
   .fifth__content {
     overflow: hidden;
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .fifth__content-inner {
+    display: flex;
+    transition: all 1s ease 0s;
   }
   .fifth__content-item {
     max-width: 50%;
-    margin: 0px 18px;
   }
   .fifth__picture > img {
     width: 510px;

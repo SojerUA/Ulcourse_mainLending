@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@import "fontawesome.css";
+@import "./nullstyle.css";
+@import "./fontawesome.css";
 @font-face {
   font-family: "Inconsolata Regular";
   src: url("../fonts/Inconsolata-Regular.eot");
@@ -56,79 +57,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/*Reset File*/
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-:focus, :active {
-  outline: none;
-}
-
-a:focus, a:active {
-  outline: none;
-}
-
-nav, footer, header, aside {
-  display: block;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-input, button, textarea {
-  font-family: inherit;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a, a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*--------------------*/
 @font-face {
   font-family: "Font Awesome 5 Brands";
   font-style: normal;
@@ -190,6 +118,60 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1000;
 }
 
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #c9c3c3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  transition: all 0.5s ease 0s;
+}
+.preloader__pixova {
+  text-transform: uppercase;
+  margin: 0px 0px 150px 0px;
+  transform: translate(0px, 1000%);
+  transition: all 0.5s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader__pixova.transparent {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+.preloader__pixova-lite {
+  font-family: "Roboto regular";
+  font-size: 24px;
+}
+.preloader__wrap {
+  margin-top: 50px;
+  max-width: 15%;
+  transform: translate(0px, 200%);
+  transition: all 0.5s ease 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader__wrap.transparent {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+.preloader__wrap > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.preloader.transparent {
+  transform: translate(0, -100%);
+}
+
 .header {
   background-color: #fff;
   color: #000000;
@@ -233,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 15px;
   right: 60px;
-  padding: 20px 55px 10px 10px;
+  padding: 20px 55px 30px 10px;
   display: none;
 }
 .header__burger {
@@ -559,7 +541,7 @@ h1, h2, h3, h4, h5, h6 {
 .fourth {
   background-color: #ffffff;
   width: 100%;
-  padding: 30px 0px;
+  padding: 60px 0px;
   margin: 0 auto;
   text-align: center;
   transform: translate(90%, 0px);
@@ -598,11 +580,13 @@ h1, h2, h3, h4, h5, h6 {
 .fourth__wrapper-slider {
   width: 85%;
   margin: 0 auto;
+  position: relative;
 }
 .fourth__items-slider {
   position: relative;
   display: flex;
   overflow: hidden;
+  margin-left: 35px;
 }
 .fourth__content-slider {
   visibility: hidden;
@@ -641,15 +625,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .fourth__slider-push {
   position: absolute;
-  right: 0;
-  top: 50%;
+  right: 47%;
+  top: 100%;
   cursor: pointer;
   margin-left: 10px;
 }
 .fourth__slider-prev {
   position: absolute;
-  left: 0;
-  top: 50%;
+  left: 47%;
+  top: 100%;
   cursor: pointer;
   margin-left: 10px;
 }
@@ -660,6 +644,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 30px 0px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
   transform: translate(90%, 0px);
   opacity: 0;
   transition: all 1s ease;
@@ -695,13 +680,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .fifth__content {
   max-width: 85%;
+  margin: 0 20px;
   position: relative;
   overflow: hidden;
 }
 .fifth__content-inner {
   display: flex;
   position: relative;
-  max-width: 1060px;
+  max-width: 100%;
   transition: all 0.5s ease;
 }
 .fifth__content-item {
@@ -745,10 +731,16 @@ h1, h2, h3, h4, h5, h6 {
 .fifth__slider-button {
   padding-top: 20px;
 }
-.fifth__slider-all-btn {
+.fifth__slider-prev-btn {
   position: absolute;
-  right: 0;
-  top: 35%;
+  left: 10%;
+  top: 50%;
+  cursor: pointer;
+}
+.fifth__slider-next-btn {
+  position: absolute;
+  right: 10%;
+  top: 50%;
   cursor: pointer;
 }
 
@@ -935,28 +927,56 @@ h1, h2, h3, h4, h5, h6 {
   flex: 3;
   text-align: left;
 }
+.seventh__contact-form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
 .seventh__contact-form {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 50px;
 }
-.seventh__contact-form > label {
+.seventh__contact-form > textarea {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid rgba(119, 119, 119, 0.63);
+  transition: all 0.3s ease 0s;
+}
+.seventh__contact-form > textarea:focus {
+  box-shadow: 0 0 15px #7a956b;
+}
+.seventh__contact-form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.1) url("../img/Loader2.gif") center/100px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+.seventh__label {
   display: inline-block;
   padding: 20px 0 5px;
   font-size: 16px;
   line-height: 1.8;
   font-family: "Roboto Regular";
 }
-.seventh__contact-form > input {
+.seventh__input {
   background-color: #f0f0f0;
   border: 1px solid rgba(119, 119, 119, 0.63);
   padding: 10px 10px;
   border-style: solid;
+  transition: all 0.3s ease 0s;
 }
-.seventh__contact-form > textarea {
-  background-color: #f0f0f0;
-  border: 1px solid rgba(119, 119, 119, 0.63);
+.seventh__input:focus {
+  box-shadow: 0 0 15px #7a956b;
+}
+.seventh__input._error {
+  box-shadow: 0 0 15px #ff0000;
 }
 .seventh__contact-btn {
   width: 100px;
@@ -966,6 +986,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f2c351;
   font-size: 16px;
   cursor: pointer;
+  position: relative;
+  top: 0;
+}
+.seventh__contact-btn:active {
+  top: 3px;
 }
 
 .footer {
@@ -1114,12 +1139,17 @@ h1, h2, h3, h4, h5, h6 {
   .fifth__content {
     overflow: hidden;
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .fifth__content-inner {
+    display: flex;
+    transition: all 1s ease 0s;
   }
 
   .fifth__content-item {
     max-width: 50%;
-    margin: 0px 18px;
   }
 
   .fifth__picture > img {

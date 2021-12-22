@@ -1,0 +1,34 @@
+{
+  "name": "maineproject",
+  "version": "1.0.0",
+  "description": "lending",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SojerUA/Ulcourse_mainLending.git"
+  },
+  "author": "Bilyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SojerUA/Ulcourse_mainLending/issues"
+  },
+  "homepage": "https://github.com/SojerUA/Ulcourse_mainLending#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-scss": "^1.4.0",
+    "gulp-uglify-es": "^3.0.0",
+    "sass": "^1.45.1"
+  }
+}
