@@ -124,7 +124,7 @@ $color_wight: #ffffff;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #c9c3c3;
+  background-color: #f1eded;
   position: fixed;
   left: 0;
   top: 0;
@@ -975,9 +975,6 @@ $color_wight: #ffffff;
       box-shadow: 0 0 15px #7a956b;
     }
   }
-  &__input._error {
-    box-shadow: 0 0 15px #ff0000;
-  }
   &__contact-btn {
     width: 100px;
     padding: 10px 0;
@@ -1094,6 +1091,11 @@ $color_wight: #ffffff;
   top: 0;
   margin-top: 0;
   padding-top: 0;
+}
+.errors {
+  height: 20px;
+  color: red;
+  padding: 5px 0px;
 }
 .second._active {
   transform: translate(0px, 0px);

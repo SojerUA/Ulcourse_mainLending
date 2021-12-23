@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="./scss/style.css">
   <link rel="shortcut icon" href="./img/shortcut.ico" type="image/x-icon">
-  <script defer src="./js/script.min.js"></script>
+  <script defer src="./js/script.js"></script>
   <script defer src="./js/app.js"></script>
   <script defer src="./js/slider.js"></script>
   <title>Pixova Lite</title>
@@ -14,7 +14,7 @@
 <body>
   <div class="preloader" id="preloader">
     <div class="preloader__pixova" id="pixova"><span class="preloader__pixova-lite">Pixova Lite</span></div>
-    <div class="preloader__wrap" id="wrap"> <img src="./img/Loader.gif" alt="preloader"> </div>
+    <div class="preloader__wrap" id="wrap"> <img src="./img/loaderNew.gif" alt="preloader"> </div>
   </div>
   <header class="header" id="fixed">
     <div class="header__content">
@@ -407,14 +407,16 @@
       <div class="seventh__content-form">
           <form id="form" class="seventh__contact-form" action="#" method="post" enctype="multipart/form-data">
             <label for="name" class="seventh__label">Your Name (required)</label>
-            <input type="text" name="name" id="name" class="seventh__input _req">
+            <input type="text" name="username" id="name" class="seventh__input form-control">
+            <div class="errors"></div>
             <label for="email" class="seventh__label">Your Email (required)</label>
-            <input type="email" name="email" id="email" class="seventh__input _email _req ">
+            <input type="email" name="useremail" id="email" class="seventh__input form-control">
+            <div class="errors"></div>
             <label for="subject" class="seventh__label">Subject</label>
-            <input type="text" name="subject" id="subject" class="seventh__input">
+            <input type="text" name="subject" id="subject" class="seventh__input form-check-input">
             <label for="message" class="seventh__label">Your Message</label>
-            <textarea name="message" id="message" rows="15" cols="30"></textarea>
-            <button class="seventh__contact-btn" type="submit">Send</button>
+            <textarea name="message" id="message" rows="15" cols="30" class="form-check-input"></textarea>
+            <button class="seventh__contact-btn btn btn-primary" type="submit">Send</button>
         </form>
       </div>
     </div>

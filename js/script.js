@@ -96,9 +96,23 @@ setTimeout(function() {
 
 setTimeout(function() {
   wrap.classList.add('transparent');
-}, 500)
+}, 1000)
 
+// anchor to id
 
+const anchorId = document.querySelectorAll('a[href^="#"]');
+anchorId.forEach(anchorId => {
+  anchorId.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = anchorId.getAttribute('href');
+    const targetSection = document.querySelector(id);
+
+    window.scrollBy({
+      top: targetSection.offsetTop,
+      behavior: 'smooth'
+    });
+  });
+})
 
 
 
